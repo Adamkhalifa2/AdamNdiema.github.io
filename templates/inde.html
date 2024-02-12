@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            background-color: #343a40; /* Dark background color */
+            color: #ffffff; /* White text color */
+        }
+        .navbar-dark .navbar-nav .nav-link {
+            color: #ffffff; /* White color for navbar links */
+        }
+        .image-with-text {
+            display: flex;
+            align-items: center;
+            color: #ffffff; /* White text color */
+        }
+        .text {
+            margin-left: 20px; /* Adjust the margin as needed */
+        }
+        .small-image {
+            width: 1500px; /* Set the desired width for the image */
+            height:500px;
+        }
+        .company-logo {
+            width: 315px;
+            height: 200px;
+        }
+         .future-aspirations {
+        text-align: center; /* Center align contents */
+             color: gold;
+    }
+        
+
+       
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="http://127.0.0.1:8000/admin/port/contact/">Admin</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/home/">Home</a>
+        </li>
+      <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1:8000/inde/">About me</a>
+                </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://127.0.0.1:8000/new/">Contact me</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://127.0.0.1:8000/map/" >Located</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="image-with-text">
+    {% for pic in pic %}
+        <img src="{{ pic.profilephoto.url }}" alt="Adam's Photo" class="small-image">
+    {% endfor %}
+    <div class="text">
+        <p>
+Hello, I'm Adam Ndiema, a resident of the picturesque Elgon View estate in Eldoret, where I find solace amidst the bustling energy of urban life. My passions encompass a diverse array of activities that enrich my existence and fuel my ambition. At the heart of my pursuits lies a deep-seated love for coding, where I immerse myself in the intricate world of programming languages and digital innovation. Whether I'm crafting elegant algorithms or developing intuitive user interfaces, coding serves as both a creative outlet and a tool for problem-solving, allowing me to channel my curiosity into tangible solutions. Beyond the glow of the computer screen, I find rejuvenation in the great outdoors, where scout activities and hiking expeditions beckon me to explore the wonders of nature and test my physical and mental resilience. There's something profoundly liberating about traversing rugged trails and scaling lofty peaks, a sense of freedom and adventure that invigorates my spirit and broadens my horizons. Amidst these exhilarating pursuits, sports also hold a special place in my heart, offering me the thrill of competition and the joy of camaraderie. Whether it's the swift pace of badminton, the precision of table tennis, the passion of football, or the teamwork of basketball, each sport presents its own unique challenges and rewards, fostering discipline, resilience, and teamwork. Yet, perhaps most formative of all has been my experience in leadership roles, where I've had the privilege of guiding and inspiring others to reach their full potential. As a dorm captain, I learned the importance of empathy and organization in fostering a supportive living environment, while my tenure as club captain honed my communication skills and strategic thinking, empowering me to unite diverse talents towards a common goal. Through this portfolio, I extend an invitation to explore the tapestry of my interests and experiences, as I endeavor to weave a legacy of innovation, exploration, and leadership in all that I pursue.</p>
+    </div>
+</div>
+<br><br><br>
+<div class="row">
+    {% for experience in exp %}
+        <div class="col-sm-3">
+            <div class="card">
+                <img src="{{ experience.logo.url }}" alt="Company logo" class="company-logo">
+                <div class="card-body">
+                    <h3 class="card-title">{{ experience.role }}</h3>
+                    <p class="card-text">{{ experience.role_description }}</p>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+<br><br>
+<div class="future-aspirations">
+    <h1>FUTURE ASPIRATIONS</h1><br><br>
+    <p class="animated-paragraph">My name is Adam Ndiema, and I have a clear vision for my future. Currently, I am pursuing coding classes, and I plan to further my education by studying to become an anesthesiologist. This dual interest in both medicine and technology reflects my passion for innovation and helping others. As an anesthesiologist, I aim to contribute to the field of medicine by providing excellent patient care, while my coding skills will allow me to explore and develop technological solutions that can enhance healthcare delivery. With this combination of expertise, I hope to make a positive impact on the medical field and contribute to the advancement of healthcare practices.</p>
+</div>
+
+</body>
+</html>

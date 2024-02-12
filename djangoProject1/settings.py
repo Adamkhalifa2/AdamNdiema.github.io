@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'portfolio',
     'django1',
     'lib',
+    'port'
 ]
 
 MIDDLEWARE = [

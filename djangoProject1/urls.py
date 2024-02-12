@@ -24,7 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('portfolio.urls')),
     path('',include('django1.url')),
-    path('',include('lib.urls'))
+    path('',include('lib.urls')),
+    path('',include('port.urls'))
 
 
 ]
